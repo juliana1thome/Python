@@ -1,0 +1,10 @@
+print("********************************")
+print(" Welcome to Juliana's Mad Libs")
+print("********************************\n")
+
+color = input("Enter the first word(color): ")
+plural_name = input("Enter the second word(plural noun): ")
+name = input("Enter the third word(name): ")
+print("Roses are {}".format(color))
+print("{} are blue".format(plural_name))
+print("I love {}".format(name))
