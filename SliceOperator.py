@@ -9,10 +9,18 @@ print(sliced)
 sliced = x[0:4:2]
 print(sliced)
 
-# reverse a list
+# Reverse a list
 sliced = x[::-1]
 print(sliced)
 
 # Remove just one letter
 sliced = s[::2]
+print(sliced)
+
+# Just one : Says stop in the ... position
+sliced = s[:2]
+print(sliced)
+
+# After the number just one : says start from this position, same as ::
+sliced = s[2:]
 print(sliced)
