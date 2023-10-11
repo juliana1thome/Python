@@ -16,11 +16,9 @@ def solution(s):
 
 
 print("test 1: ")
-#print('AAAAABBBBCCCC')
 solution('AAAAABBBBCCCC')
 print("*********************************************************" + '\n')
 
 print("test 2: ")
-#print('AAaaaBBBBCCCC')
 solution('AAaaaBBBBCCCC')
 print("*********************************************************" + '\n')

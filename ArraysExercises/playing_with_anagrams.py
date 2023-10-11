@@ -24,4 +24,4 @@ def anagram(s1, s2):
 
     return True
 
-anagram("doog", "good")
+print (anagram("doog", "good"))
