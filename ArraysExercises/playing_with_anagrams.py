@@ -1,25 +1,28 @@
 # Anagram Check
-from re import split
 
+def anagram(word1, word2):
+    # Check if any word has spaces on it, if yes remove it by using replace
+    # Make the words by in lowercase
+    word1 = word1.replace(' ', '').lower()
+    word2 = word2.replace(' ', '').lower()
+    word_1_dictionary = {}
 
-def anagram(s1, s2):
-    s1 = s1.replace(' ', '').lower()
-    s2 = s2.replace(' ', '').lower()
-    d1 = {}
-
-    # First check
-    if len(s1) != len(s2):
+    # First check: If the words has different length they can't be an anagram
+    if len(word1) != len(word2):
         return False
 
     else:
-        for letter in s1:
-            if letter in d1:
-                d1[letter] += 1
+        # For each word create a dictionary
+        # with the keys being the letters and the value
+        # being the amount of times this letter is in the word
+        for letter in word1:
+            if letter in word_1_dictionary:
+                word_1_dictionary[letter] += 1
             else:
-                d1[letter] = 1
+                word_1_dictionary[letter] = 1
 
-        for j in d1:
-            if d1[j] != 0:
+        for j in word_1_dictionary:
+            if word_1_dictionary[j] != 0:
                 return False
 
     return True
