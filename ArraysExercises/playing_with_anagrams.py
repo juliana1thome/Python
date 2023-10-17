@@ -1,30 +1,28 @@
 # Anagram Check
-
 def anagram(word1, word2):
-    # Check if any word has spaces on it, if yes remove it by using replace
-    # Make the words by in lowercase
+    # Remove spaces and convert to lowercase
     word1 = word1.replace(' ', '').lower()
     word2 = word2.replace(' ', '').lower()
-    word_1_dictionary = {}
 
-    # First check: If the words has different length they can't be an anagram
+    # Check for different word lengths
     if len(word1) != len(word2):
         return False
 
-    else:
-        # For each word create a dictionary
-        # with the keys being the letters and the value
-        # being the amount of times this letter is in the word
-        for letter in word1:
-            if letter in word_1_dictionary:
-                word_1_dictionary[letter] += 1
-            else:
-                word_1_dictionary[letter] = 1
+    # Create dictionaries to count letter occurrences
+    count1 = {}
+    count2 = {}
 
-        for j in word_1_dictionary:
-            if word_1_dictionary[j] != 0:
-                return False
+    # Populate the dictionaries
+    for letter in word1:
+        count1[letter] = count1.get(letter, 0) + 1
 
-    return True
+    for letter in word2:
+        count2[letter] = count2.get(letter, 0) + 1
 
-print (anagram("doog", "good"))
+    # Compare the dictionaries
+    return count1 == count2
+
+# Test the function
+assert(anagram("listen", "silent")) == True
+assert(anagram("hello", "world")) == False
+assert(anagram("doog", "good")) == True
